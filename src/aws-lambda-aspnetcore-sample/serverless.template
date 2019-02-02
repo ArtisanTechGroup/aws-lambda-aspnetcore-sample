@@ -8,7 +8,7 @@
       "Type" : "String",        
       "AllowedValues" : ["true", "false"],
       "Description" : "If true then the S3 bucket that will be proxied will be created with the CloudFormation stack."
-    },  
+    },
     "BucketName" : {
         "Type" : "String",
         "Description" : "Name of S3 bucket that will be proxied. If left blank a name will be generated.",
@@ -26,7 +26,7 @@
     "AspNetCoreFunction" : {
       "Type" : "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "aws_lambda_aspnetcore_sample::aws_lambda_aspnetcore_sample.LambdaEntryPoint::FunctionHandlerAsync",
+        "Handler": "aws-lambda-aspnetcore-sample::aws_lambda_aspnetcore_sample.LambdaEntryPoint::FunctionHandlerAsync",
         "Runtime": "dotnetcore2.1",
         "CodeUri": "",
         "MemorySize": 256,

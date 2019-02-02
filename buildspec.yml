@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - dotnet tool install -g Amazon.Lambda.Tools
+  build:
+    commands:
+      - cd src/aws-lambda-aspnetcore-sample
+      - dotnet lambda package-ci --configuration Release
+                                 --template-file serverless.template
+                                 --s3-bucket crb-estimator-builds
+                                 --output-template ../../outputSamTemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - outputSamTemplate.yaml
